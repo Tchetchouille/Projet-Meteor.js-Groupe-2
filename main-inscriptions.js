@@ -11,7 +11,10 @@ Template.register.events({
 	var email = $('input[name="email"]').value;
 	var password = $('input[name="password"]').value;
 	var profile = {
-			//Nom, Prénom, Institut, Domaine....
+			Nom : "exemple";
+			Prénom : " Exemple";
+			Institut : "Exemple"
+			Domaine : "Exemple " // peut-être faire ça sous forme de liste ?
 				   
 	};
 
