@@ -1,7 +1,7 @@
 import { Meteor } from 'meteor/meteor';
 import { Mongo } from 'meteor/mongo';
 import { check } from 'meteor/check';
-import import '../ui/formulaire_profil.html';
+import '../ui/formulaire_profil.html';
 
 Template.formulaire_profil.events({
 'submit form': function(){
