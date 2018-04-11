@@ -1,0 +1,13 @@
+<template name="formulaire_profil">
+    {{#if currentUser}}
+       <form>
+        <input type="text" name="Nom">
+        <input type="text" name="Prénom">
+        <input type="text" name="Université">
+        <input type="checkbox" name="Branche">
+        <input type="submit" value="Remplir le profil">
+       </form>
+    {{else}}
+        <p>Il faut vous connecter pour voir le contenu de cette page.</p>
+    {{/if}}
+    </template>
