@@ -1,0 +1,32 @@
+<!-- Je me suis permi de déplacer le fichier car il ne fonctionnait pas correctement depuis imports/ui, mais depuis ici, si -->
+
+<template name="formulaire_profil">
+    {{#if currentUser}}
+       <form>
+        <input type="text" id="Nom">
+        <input type="text" id="Prénom">
+        <input type="text" id="Université">
+        <input type="checkbox" id="Branche">
+        <input type="submit" value="Remplir le profil">
+       </form>
+    {{else}}
+        <p>Il faut vous connecter pour voir le contenu de cette page.</p>
+    {{/if}}
+</template>
+
+<!-- Je fais ma propre version du formulaire pour pas fouttre en l'air ce que tu as fait. On en rediscute Lundi -->
+<template name="formulaire_profil_Jeremias">
+    {{#if signingIn}}
+        <form>
+            <input type="text" id="name" placeholder="Nom">
+            <input type="text" id="firstName" placeholder="Prénom">
+            <input type="text" id="university" placeholder="Université">
+            <input type="submit" value="Créer le profil">
+        </form>
+    <!-- Si l'utilisateur n'est pas connecté, il peut créer un compte ou se connecter -->
+    {{else}}
+        <p>Veuillez créer un compte ou vous connecter pour continuer.</p>
+        <input type="button" class="signIn" value="Sign In">
+    {{/if}}
+    <input type="button" class="logIn" value="Log In">
+</template>
