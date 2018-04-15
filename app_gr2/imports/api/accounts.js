@@ -1,16 +1,20 @@
 import { Meteor } from 'meteor/meteor';
 import { Mongo } from 'meteor/mongo';
 import { check } from 'meteor/check';
+import '../ui/formulaire_profil.html';
 
-Accounts.onCreateUser((options, user) => {
-    user.nom: '';
-    user.prenom: '';£
-    user.uni : '';
-    user.branche :'';
+Template.formulaire_profil.events({
+'submit form': function(){
+// Première base : Créer les variables 
 
-    if(options.profile){
-        user.profile = options.profile;
-    }
+nom = $('#Nom').val(),
+prenom = $('#Prénom').val(),
+universite = $('#Université').val(),
 
-    return user;
+// Ensuite :
+Accounts.createUser({
+    Nom: nom,
+    Prenom: prenom,
+    Université: universite,
+}
 });
