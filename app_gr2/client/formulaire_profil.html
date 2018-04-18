@@ -21,12 +21,14 @@
             <input type="text" id="name" placeholder="Nom">
             <input type="text" id="firstName" placeholder="Prénom">
             <input type="text" id="university" placeholder="Université">
+            <input type="checkbox" id="Branche" placeholder ="Branche">
             <input type="submit" value="Créer le profil">
         </form>
+        <input type="button" class="retour" value="Retour">
     <!-- Si l'utilisateur n'est pas connecté, il peut créer un compte ou se connecter -->
     {{else}}
         <p>Veuillez créer un compte ou vous connecter pour continuer.</p>
         <input type="button" class="signIn" value="Sign In">
+        <input type="button" class="logIn" value="Log In">
     {{/if}}
-    <input type="button" class="logIn" value="Log In">
 </template>
