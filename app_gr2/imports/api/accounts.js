@@ -1,18 +1,22 @@
 import { Meteor } from 'meteor/meteor';
 import { Mongo } from 'meteor/mongo';
 import { check } from 'meteor/check';
+import {Template} from 'meteor/templating'
 
-import '../client/formulaire_profil.html';
+import '../../client/formulaire_profil.html';
 
 
 
-Template.formulaire_profil.events({
-    'submit form': function(){
+Template.formulaire_modification_profil.events({
+    'submit .form_ut': function(e){
         // Première base : Créer les variables 
+        e.preventDefault();
 
         nom = $('#Nom').val(),
         prenom = $('#Prénom').val(),
         universite = $('#Université').val(),
+
+        console.log(nom, prenom, universite)
 
         // Ensuite :
         Accounts.createUser({
