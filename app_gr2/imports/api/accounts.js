@@ -18,3 +18,5 @@ Accounts.createUser({
     Université: universite,
 }
 });
+
+// et ça rajoute tout ça dans la base de données  
