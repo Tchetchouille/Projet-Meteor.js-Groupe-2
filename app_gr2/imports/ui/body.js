@@ -1,2 +1,4 @@
 
-import './formulaire_modification_profil.html';
+import { Template } from 'meteor/templating';
+
+import './formulaire_profil.html';
