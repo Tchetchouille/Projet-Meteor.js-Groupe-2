@@ -8,7 +8,6 @@ Template.formulaire_modification_profil.events({
         // Première base : Créer les variables 
         event.preventDefault();
 
-        /*
         nom = $('#Nom').val();
         prenom = $('#Prénom').val();
         universite = $('#Université').val();
@@ -21,6 +20,6 @@ Template.formulaire_modification_profil.events({
             Prenom: prenom,
             Université: universite
         });
-        */
+        
     }
 });
