@@ -1,2 +1,2 @@
 
-import '/formulaire_profil.html';
+import './formulaire_modification_profil.html';
