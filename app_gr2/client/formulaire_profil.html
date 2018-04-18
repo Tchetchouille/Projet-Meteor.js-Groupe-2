@@ -1,13 +1,13 @@
 <!-- Je me suis permi de déplacer le fichier car il ne fonctionnait pas correctement depuis imports/ui, mais depuis ici, si -->
 
-<template name="formulaire_profil">
+<template name="formulaire_modification_profil">
     {{#if currentUser}}
        <form>
         <input type="text" id="Nom">
         <input type="text" id="Prénom">
         <input type="text" id="Université">
         <input type="checkbox" id="Branche">
-        <input type="submit" value="Remplir le profil">
+        <input type="submit" value="Modifier le profil">
        </form>
     {{else}}
         <p>Il faut vous connecter pour voir le contenu de cette page.</p>
@@ -15,7 +15,7 @@
 </template>
 
 <!-- Je fais ma propre version du formulaire pour pas fouttre en l'air ce que tu as fait. On en rediscute Lundi -->
-<template name="formulaire_profil_Jeremias">
+<template name="formulaire_inscription_profil">
     {{#if signingIn}}
         <form>
             <input type="text" id="name" placeholder="Nom">
