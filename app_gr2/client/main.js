@@ -21,9 +21,9 @@ Template.formulaire_inscription_profil.events({
     'click .retour' : function(){
         Session.set('signingIn', false);
     },
-    'submit form' : function(event){
+    'submit .formulaire_inscription' : function(event){
         //Pour ne pas recharger la page
         event.preventDefault();
-        //Il faudra que je crée la méthode pour ajouter un document
+        //Il faudra que je crée la méthode pour ajouter un document dans la collection
     }
 });

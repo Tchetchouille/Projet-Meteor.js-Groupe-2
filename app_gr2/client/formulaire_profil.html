@@ -17,11 +17,16 @@
 <!-- Je fais ma propre version du formulaire pour pas fouttre en l'air ce que tu as fait. On en rediscute Lundi -->
 <template name="formulaire_inscription_profil">
     {{#if signingIn}}
-        <form>
+        <form class="formulaire_inscription">
             <input type="text" id="name" placeholder="Nom">
             <input type="text" id="firstName" placeholder="Prénom">
             <input type="text" id="university" placeholder="Université">
-            <input type="checkbox" id="Branche" placeholder ="Branche">
+            <select id="Branche" size="1">
+                <option value="Biologie">Biologie</option>
+                <option value="Chimie">Chimie</option>
+                <option value="Domptage de licornes">Domptage de licornes</option>
+                <option value="Histoire">Histoire</option>
+            </select>
             <input type="submit" value="Créer le profil">
         </form>
         <input type="button" class="retour" value="Retour">
