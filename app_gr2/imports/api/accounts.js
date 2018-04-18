@@ -2,7 +2,7 @@ import { Meteor } from 'meteor/meteor';
 import { Mongo } from 'meteor/mongo';
 import { check } from 'meteor/check';
 
-import '../ui/formulaire_profil.html';
+import '../client/formulaire_profil.html';
 
 
 
