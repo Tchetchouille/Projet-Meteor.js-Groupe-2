@@ -4,14 +4,14 @@ import { ReactiveVar } from 'meteor/reactive-var';
 import './main.html';
 
 //Je met ça là pour l'instant
-Template.formulaire_profil_Jeremias.helpers({
+Template.formulaire_inscription_profil.helpers({
     'signingIn' : function(){
         let signingIn = Session.get('signingIn');
         return signingIn;
     }
 });
 
-Template.formulaire_profil_Jeremias.events({
+Template.formulaire_inscription_profil.events({
     //En cliquant ce bouton, on affiche le formulaire
     'click .signIn' : function(){
         Session.set('signingIn', true);
