@@ -1,6 +1,6 @@
 <template name="formulaire_modification_profil">
     {{#if currentUser}}
-       <form class="form_ut">
+       <form class="form_modification">
         Nom : <input type="text" id="Nom">
         Prénom : <input type="text" id="Prénom">
         Université : <input type="text" id="Université">
@@ -9,7 +9,7 @@
                   <option>Médecine</option>
                   <option>Maths</option>
                   </select>
-        <button>Modifier le profil</button>
+        <input type="submit" value="Test">
        </form>
     {{else}}
         <p>Il faut vous connecter pour voir le contenu de cette page.</p>

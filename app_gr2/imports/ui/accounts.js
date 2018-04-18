@@ -1,20 +1,17 @@
 import { Meteor } from 'meteor/meteor';
-import { Mongo } from 'meteor/mongo';
-import { check } from 'meteor/check';
 import {Template} from 'meteor/templating'
 
-import '../../client/formulaire_profil.html';
-
-
+import './formulaire_profil.html';
 
 Template.formulaire_modification_profil.events({
-    'submit .form_ut': function(e){
+    'submit .form_modification': function(event){
         // Première base : Créer les variables 
-        e.preventDefault();
+        event.preventDefault();
 
-        nom = $('#Nom').val(),
-        prenom = $('#Prénom').val(),
-        universite = $('#Université').val(),
+        /*
+        nom = $('#Nom').val();
+        prenom = $('#Prénom').val();
+        universite = $('#Université').val();
 
         console.log(nom, prenom, universite)
 
@@ -24,5 +21,6 @@ Template.formulaire_modification_profil.events({
             Prenom: prenom,
             Université: universite
         });
+        */
     }
 });
