@@ -1,3 +1,9 @@
+<<<<<<< HEAD
+=======
+
+<<<<<<< HEAD
+=======
+>>>>>>> 45d278643a62498ac03864cc435d91b491bd50ba
 import { Template } from 'meteor/templating';
 import { ReactiveVar } from 'meteor/reactive-var';
 
@@ -14,6 +20,7 @@ Template.formulaire_inscription_profil.helpers({
     }
 });
 
+<<<<<<< HEAD
 Template.formulaire_inscription_profil.events({
     //En cliquant ce bouton, on affiche le formulaire
     'click .signIn' : function(){
@@ -29,3 +36,7 @@ Template.formulaire_inscription_profil.events({
         //Il faudra que je crée la méthode pour ajouter un document dans la collection
     }
 });
+=======
+>>>>>>> a630e0ce4961e47dc02d81211713fa802c8785c1
+import './formulaire_profil.html';
+>>>>>>> 45d278643a62498ac03864cc435d91b491bd50ba
