@@ -2,7 +2,7 @@ import { Template } from 'meteor/templating';
 import { ReactiveVar } from 'meteor/reactive-var';
 
 import './body.html';
-import './formulaire_profil.html';
+import './templates/formulaire_profil.html';
 
 
 //Je met ça là pour l'instant
@@ -23,7 +23,7 @@ Template.formulaire_inscription_profil.events({
     'click .retour' : function(){
         Session.set('signingIn', false);
     },
-    'submit .formulaire_inscription' : function(event){
+    'submit .formulaire_inscription_profil' : function(event){
         //Pour ne pas recharger la page
         event.preventDefault();
         //Il faudra que je crée la méthode pour ajouter un document dans la collection

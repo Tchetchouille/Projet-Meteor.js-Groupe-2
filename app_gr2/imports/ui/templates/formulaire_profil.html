@@ -23,20 +23,22 @@
 <!-- Je fais ma propre version du formulaire pour pas fouttre en l'air ce que tu as fait. On en rediscute Lundi -->
 <template name="formulaire_inscription_profil">
     {{#if signingIn}}
-        <form class="formulaire_inscription">
-            <input type="text" id="name" placeholder="Nom">
-            <input type="text" id="firstName" placeholder="Prénom">
-            <input type="text" id="email_adress" placeholder="Adresse email">
-            <select id="Université" size="1">
+        <form class="formulaire_inscription_profil">
+            <p><input type="text" id="name" placeholder="Nom"></p>
+            <p><input type="text" id="firstName" placeholder="Prénom"></p>
+            <p><input type="password" id="password" placeholder="Mot de passe"></p>
+            <p><input type="password" id="password_verification" placeholder="Vérifier le mot de passe"></p>
+            <p><input type="email" id="email_adress" placeholder="Adresse email"></p>
+            <p><select id="Université" size="1">
                 <option value="Lausanne">Université de Lausanne</option>
-            </select>
-            <select id="branch" size="1">
+            </select></p>
+            <p><select id="branch" size="1">
                 <option value="Biologie">Biologie</option>
                 <option value="Chimie">Chimie</option>
                 <option value="Domptage de licornes">Domptage de licornes</option>
                 <option value="Histoire">Histoire</option>
-            </select>
-            <input type="submit" value="Créer le profil">
+            </select></p>
+            <p><input type="submit" value="Créer le profil"></p>
         </form>
         <input type="button" class="retour" value="Retour">
     <!-- Si l'utilisateur n'est pas connecté, il peut créer un compte ou se connecter -->
