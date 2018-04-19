@@ -6,15 +6,11 @@ Meteor.startup(() => {
 
 
 // INSCRIPTION
-/*
-Accounts.onCreateUser((options, user) => {
-  user.test = 'test';
-  console.log('wtf?');
 
-  if (options.profile) {
-    user.profile = options.profile;
+//Cette méthode crée un utilisateur. Ne marche aps pour l'instant.
+Meteor.methods({
+  'creerUtilisateur': function(newUserData){
+      console.log('La méthode marche');
+      return Accounts.createUser(newUserData);
   }
-
-  return user;
 });
-*/

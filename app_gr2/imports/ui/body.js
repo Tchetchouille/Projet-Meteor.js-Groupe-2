@@ -30,21 +30,17 @@ Template.formulaire_inscription_profil.events({
     'submit .formulaire_inscription_profil' : function(event){
         //Pour ne pas recharger la page
         event.preventDefault();
-        //créer les variables pour manipuler les valeurs récupérées
-        let nom = $('[id=name]').val();
-        let prenom = $('[id=firstName]').val();
-        let email =  $('[id=email_adress]').val();
-        let mot_de_passe =  $('[id=password]').val();
-        let universite =  $('[id=university]').val();
-        let domaine =  $('[id=branch]').val();   
-        
-        //Je suis en train d'essayer de bricoler pour pouvoir ajouter les valeurs
-        let userId = Accounts.createUser({
-            email: email,
-            password: mot_de_passe,
-        });
-        console.log(userId);
-        Meteor.call('creerUtilisateur', userId);
+        //Ici j'essaie de stocker toutes ces infos dans newUserData, de la même manière que "adress" et "verified" sont stockés dans "email"
+        let newUserData = {
+            nom: $('[id=name]').val(),
+            prenom: $('[id=firstName]').val(),
+            email:  $('[id=email_adress]').val(),
+            mot_de_passe:  $('[id=password]').val(),
+            universite:  $('[id=university]').val(),
+            domaine:  $('[id=branch]').val()
+        };
+        //Ici la méthode est stockée dans le server.  
+        Meteor.call('creerUtilisateur', newUserData);
     }
 });
 
