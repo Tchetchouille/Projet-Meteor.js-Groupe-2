@@ -1,11 +1,15 @@
 import { Template } from 'meteor/templating';
 import { ReactiveVar } from 'meteor/reactive-var';
+import { Accounts } from 'meteor/accounts-base';
 
 import './body.html';
 import './templates/formulaire_profil.html';
 
 
-//Je met ça là pour l'instant
+
+
+//INSCRIPTION 
+
 Template.formulaire_inscription_profil.helpers({
     //signingIn permet d'afficher des choses différentes en fonction de si la personne remplit le formulaire d'inscription ou non.
     'signingIn' : function(){
@@ -26,6 +30,21 @@ Template.formulaire_inscription_profil.events({
     'submit .formulaire_inscription_profil' : function(event){
         //Pour ne pas recharger la page
         event.preventDefault();
-        //Il faudra que je crée la méthode pour ajouter un document dans la collection
+        //créer les variables pour manipuler les valeurs récupérées
+        let nom = $('[id=name]').val();
+        let prenom = $('[id=firstName]').val();
+        let email =  $('[id=email_adress]').val();
+        let mot_de_passe =  $('[id=password]').val();
+        let universite =  $('[id=university]').val();
+        let domaine =  $('[id=branch]').val();   
+        
+        //Je suis en train d'essayer de bricoler pour pouvoir ajouter les valeurs
+        let userId = Accounts.createUser({
+            email: email,
+            password: mot_de_passe,
+        });
+        console.log(userId);
+        Meteor.call('creerUtilisateur', userId);
     }
 });
+
