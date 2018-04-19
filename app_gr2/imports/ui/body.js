@@ -19,7 +19,7 @@ Template.formulaire_inscription_profil.events({
     'click .signIn' : function(){
         Session.set('signingIn', true);
     },
-    //En cliquant ce bouton, on affiche(ra) le login
+    //En cliquant ce bouton, le formulaire disparait.
     'click .retour' : function(){
         Session.set('signingIn', false);
     },
@@ -29,4 +29,3 @@ Template.formulaire_inscription_profil.events({
         //Il faudra que je crée la méthode pour ajouter un document dans la collection
     }
 });
-
