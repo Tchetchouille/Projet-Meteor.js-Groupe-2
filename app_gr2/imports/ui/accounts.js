@@ -4,7 +4,7 @@ import {Template} from 'meteor/templating'
 import './formulaire_profil.html';
 
 Template.formulaire_modification_profil.events({
-    'submit .form_modification': function(event){
+    'click .form_modification': function(event){
         // Première base : Créer les variables 
         event.preventDefault();
 
