@@ -12,6 +12,13 @@ Template.formulaire_modification_profil.events({
         prenom = $('#Prénom').val(),
         universite = $('#Université').val();
 
-        console.log(nom, prenom, universite)   
+        console.log(nom, prenom, universite)
+
+        // Ensuite :
+        Accounts.createUser({
+            Nom: nom,
+            Prenom: prenom,
+            Université: universite
+        });   
     }
 });
