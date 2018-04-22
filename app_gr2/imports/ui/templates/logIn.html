@@ -1,3 +1,12 @@
 <template name='logIn'>
-    
+    {{#if logedIn}}
+    {{else}}
+        {{#if signingIn}}
+            {{> formulaire_inscription_profil}}
+        {{else}}
+            <p>Bienvenue ! Veuillez vous connecter ou vous créer un compte pour continuer.</p>
+            <input type="button" class="signIn" value="Sign In">
+            <input type="button" class="logIn" value="Log In">
+        {{/if}}
+    {{/if}}
 </template>

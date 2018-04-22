@@ -22,7 +22,6 @@
 
 <!-- Je fais ma propre version du formulaire pour pas fouttre en l'air ce que tu as fait. On en rediscute Lundi -->
 <template name="formulaire_inscription_profil">
-    {{#if signingIn && logedIn=='false'}}
         <form class="formulaire_inscription_profil">
             <p><input type="text" id="name" placeholder="Nom"></p>
             <p><input type="text" id="firstName" placeholder="Prénom"></p>
@@ -41,10 +40,4 @@
             <p><input type="submit" value="Créer le profil"></p>
         </form>
         <input type="button" class="retour" value="Retour">
-    <!-- Si l'utilisateur n'est pas connecté, il peut créer un compte ou se connecter -->
-    {{else}}
-        <p>Veuillez créer un compte ou vous connecter pour continuer.</p>
-        <input type="button" class="signIn" value="Sign In">
-        <input type="button" class="logIn" value="Log In">
-    {{/if}}
 </template>
