@@ -1,12 +1,18 @@
 <template name='logIn'>
     {{#if logedIn}}
+    <p>Work in progress...</p>
     {{else}}
         {{#if signingIn}}
             {{> formulaire_inscription_profil}}
         {{else}}
             <p>Bienvenue ! Veuillez vous connecter ou vous créer un compte pour continuer.</p>
-            <input type="button" class="signIn" value="Sign In">
-            <input type="button" class="logIn" value="Log In">
+            <form class="formLogIn">
+                <input type="email" name="loginEmail" placeholder="e-mail"><br>
+                <input type="password" name="loginPassword" placeholder="mot de passe"><br>
+                <input type="submit" class="logIn" value="Connexion">
+            </form>
+            <p>Pas encore de compte ? Créez-en un ici : </p>
+            <input type="button" class="signIn" value="Inscription">
         {{/if}}
     {{/if}}
 </template>
