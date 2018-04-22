@@ -6,8 +6,6 @@ import './body.html';
 import './templates/formulaire_profil.html';
 
 
-
-
 //INSCRIPTION 
 
 Template.formulaire_inscription_profil.helpers({
@@ -32,19 +30,15 @@ Template.formulaire_inscription_profil.events({
         event.preventDefault();
         //Ici j'essaie de stocker toutes ces infos dans newUserData, de la même manière que "adress" et "verified" sont stockés dans "email"
         let newUserData = {
-            /* En commentaire pour la phase de test
             nom: $('[id=name]').val(),
             prenom: $('[id=firstName]').val(),
             email:  $('[id=email_adress]').val(),
             mot_de_passe:  $('[id=password]').val(),
             universite:  $('[id=university]').val(),
             domaine:  $('[id=branch]').val()
-            */
-            testEmail: $('[id="email_adress"]').val(),
-            testPassword: $('[id="password"]').val()
         };
         Accounts.createUser({email: $('[id="email_adress"]').val(),password: $('[id="password"]').val()});
-        //Ici la méthode est stockée dans le server.  
+        //La méthode qui créera le profil lié à l'utilisateur
         Meteor.call('creerUtilisateur', newUserData);
     }
 });

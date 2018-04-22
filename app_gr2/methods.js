@@ -5,16 +5,19 @@ Problème 2 : Actuellement, un changement est opéré mais ça "flash". Il appar
 */
 Meteor.methods({
     'creerUtilisateur': function(newUserData){
-        console.log('La méthode marche');
-        
-        /*
-        Alors ce code fait qqch de bizarre. 
-        La valeur apparait dans le document mais elle disparait une fraction de seconde après... 
-        Je suppose que ça doit être que le client n'a pas la possibilité de changer cette valeur. 
-        Pourtant je suis dans une methode et en plus on a insecure...
-        */
-        let petiteIdee = Meteor.users.findOne({"emails.address": "test@test.com"}, {_id: 1});
-        console.log(petiteIdee);
-        Meteor.users.update(petiteIdee, {$set: {ceci: "cela"}});
+        //Pour pouvoir utiliser l'_id de l'utilisateur comme foreign key
+        let userId = Meteor.users.findOne({"emails.address": 'newUserData.email'}, {_id: 1});
+
+        ProfilesUtilisateurs.insert({
+            userId: userId,
+            nom: newUserData.nom,
+            prenom: newUserData.prenom,
+            email: newUserData.email,
+            mot_de_passe: newUserData.mot_de_passe,
+            universite: newUserData.universite,
+            domaine: newUserData.domaine
+        });
+        //Pour faire disparaître le template d'inscription une fois l'inscription faite.
+        Session.set('logedIn', true);
     },
   });

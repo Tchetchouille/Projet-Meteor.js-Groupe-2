@@ -22,7 +22,7 @@
 
 <!-- Je fais ma propre version du formulaire pour pas fouttre en l'air ce que tu as fait. On en rediscute Lundi -->
 <template name="formulaire_inscription_profil">
-    {{#if signingIn}}
+    {{#if signingIn && logedIn=='false'}}
         <form class="formulaire_inscription_profil">
             <p><input type="text" id="name" placeholder="Nom"></p>
             <p><input type="text" id="firstName" placeholder="Prénom"></p>
