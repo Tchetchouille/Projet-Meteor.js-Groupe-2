@@ -50,7 +50,7 @@ Template.formulaire_inscription_profil.events({
         Accounts.createUser({email: $('[id="email_adress"]').val(),password: $('[id="password"]').val()});
         //La méthode qui créera le profil lié à l'utilisateur
         Meteor.call('creerUtilisateur', newUserData);
-        
+
         //L'utilisateur est automatiquement loged in quand il crée son compte.
         Session.set('logedIn', true);
         Session.set('signingIn', false);
