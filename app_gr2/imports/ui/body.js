@@ -13,7 +13,11 @@ Template.formulaire_inscription_profil.helpers({
     'signingIn' : function(){
         let signingIn = Session.get('signingIn');
         return signingIn;
-    }
+    },
+    'logedIn' : function(){
+        let logedIn = Session.get('logedIn');
+        return logedIn;
+    },
 });
 
 Template.formulaire_inscription_profil.events({
