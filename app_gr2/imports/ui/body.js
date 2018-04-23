@@ -17,11 +17,7 @@ Template.logIn.helpers({
     'logingIn' : function(){
         let logingIn = Session.get('logingIn');
         return logingIn;
-    },
-    'logedIn' : function(){
-        let logedIn = Session.get('logedIn');
-        return logedIn;
-    }    
+    } 
 });
 
 Template.logIn.events({
@@ -29,14 +25,16 @@ Template.logIn.events({
     'click .signIn' : function(){
         Session.set('signingIn', true);
     },
-
-    //WORK IN PROGRESS : Je dois me renseigner sur le login du package
+    //La soumission du formulaire de création de compte
     'submit .formLogIn' : function(event){
         event.preventDefault();
         let emailVar = event.target.loginEmail.value;
         let passwordVar = event.target.loginPassword.value;
-        Meteor.loginWithPassword(emailVar, passwordVar);
-        Session.set('logedIn', true);
+        //Permet de login l'utilisateur et de lui afficher l'erreur si il y en a une. A améliorer plus tard.
+        Meteor.loginWithPassword(emailVar, passwordVar, function(error){
+            alert(error.reason);
+        });
+        Session.set('signingIn', false);
     },
     //En cliquant ce bouton, le formulaire disparait.
     'click .retour' : function(){
@@ -44,16 +42,9 @@ Template.logIn.events({
     }
 });
 
-Template.barre_navigation.helpers({
-    'logedIn' : function(){
-        let logedIn = Session.get('logedIn');
-        return logedIn;
-    }
-});
-
 Template.barre_navigation.events({
     'click .logOut' : function(){
-        Session.set('logedIn', false);
+        Meteor.logout();
     }
 });
 
@@ -76,12 +67,34 @@ Template.formulaire_inscription_profil.events({
                 universite:  $('[id=university]').val(),
                 domaine:  $('[id=branch]').val()
             };
-            Accounts.createUser({email: $('[id="email_adress"]').val(),password: $('[id="password"]').val()});
+
+            let user = {
+                email: $('[id="email_adress"]').val(),
+                password: $('[id="password"]').val()
+            };
+            //Modifié en se basant sur : https://themeteorchef.com/tutorials/sign-up-with-email-verification
+            //Etrangement, ramène à la page d'acceuil en cas de problème avec le formulaire
+            Accounts.createUser( user, ( error ) => {
+                if ( error ) {
+                  alert( error.reason, 'danger' );
+                } 
+                else {
+                  Meteor.call( 'sendVerificationLink', ( error, response ) => {
+                    if ( error ) {
+                      alert(error.reason);
+                    } 
+                    else {
+                      alert('Welcome!');
+                    }
+                  });
+                }
+              });
+            
             //La méthode qui créera le profil lié à l'utilisateur
             Meteor.call('creerUtilisateur', newUserData);
-
+            
             //L'utilisateur est automatiquement loged in quand il crée son compte.
-            Session.set('logedIn', true);
+            Meteor.loginWithPassword(newUserData.email, newUserData.mot_de_passe);
             Session.set('signingIn', false);
         }
         else{
