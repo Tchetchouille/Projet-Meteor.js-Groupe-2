@@ -120,7 +120,7 @@ if (Meteor.isServer) {
   );
 };
 
-Images = new FilesCollection({
+export const Images = new FilesCollection({
   collectionName: 'Images',
   allowClientCode: false,
   debug: Meteor.isServer && process.env.NODE_ENV === 'development',
