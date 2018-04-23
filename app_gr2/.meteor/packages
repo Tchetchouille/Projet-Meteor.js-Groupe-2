@@ -25,3 +25,7 @@ accounts-base@1.4.2
 session@1.1.7
 blaze-html-templates
 email
+ostrio:files
+msavin:mongol
+autopublish
+session

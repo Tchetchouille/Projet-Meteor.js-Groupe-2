@@ -1,11 +1,19 @@
 import { Template } from 'meteor/templating';
 import { ReactiveVar } from 'meteor/reactive-var';
 import { Accounts } from 'meteor/accounts-base';
+import { FilesCollection } from 'meteor/ostrio:files';
+import Grid from 'gridfs-stream';
+import { MongoInternals } from 'meteor/mongo';
+import fs from 'fs';
+import { loadavg } from 'os';
 
 import './body.html';
 import './templates/formulaire_profil.html';
 import './templates/logIn.html';
 import './templates/barre_navigation.html';
+import './templates/uploadForm';
+import './templates/listeArticles';
+imoprt './templates/file';
 
 
 Template.logIn.helpers({
