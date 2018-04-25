@@ -3,17 +3,17 @@
        <form class="form_modification">
         Nom : <input type="text" id="Nom">
         Prénom : <input type="text" id="Prénom">
-        Université : <select ud="Branche">
-            <option>Université de Lausanne</option>
-            <option>Université de Fribourg</option>
-            <option>Université de Genève</option>
+        Université : <select id="Branche">
+            <option value="Lsn">Université de Lausanne</option>
+            <option value ="Fr">Université de Fribourg</option>
+            <option value ="Gnv">Université de Genève</option>
             </select>
         Branche : <select id="Branche">
-                  <option>Biologie</option>
-                  <option>Médecine</option>
-                  <option>Maths</option>
+                  <option value= "Bio">Biologie</option>
+                  <option value= "Mdcn">Médecine</option>
+                  <option value= "Maths">Maths</option>
                   </select>
-        <input type="submit" value="Test">
+        <input type="submit" value="Modifier le profil">
        </form>
     {{else}}
         <p>Il faut vous connecter pour voir le contenu de cette page.</p>
