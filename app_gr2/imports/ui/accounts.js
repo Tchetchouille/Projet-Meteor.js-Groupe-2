@@ -11,7 +11,9 @@ Template.formulaire_modification_profil.events({
 
         nom = $('#Nom').val(),
         prenom = $('#Prénom').val(),
-        universite = $('#Université').val();
+        universite = $('#Uni').val();
+        branche = $('#Branche').val();
+
 
         console.log(nom, prenom, universite)
 
@@ -20,6 +22,7 @@ Template.formulaire_modification_profil.events({
             Nom: nom,
             Prenom: prenom,
             Université: universite
+            Branche : branche
         });   
     }
 });
