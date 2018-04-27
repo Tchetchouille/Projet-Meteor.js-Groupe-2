@@ -1,0 +1,10 @@
+<template name="listeArticles">
+    <ul>
+    {{#each article}}
+        <li class="article {{selectedClass}}">{{name}}</li>
+    {{/each}}
+    {{#if selectedArticle}}
+        <li>selected Article: {{selectedArticle.name}} </li>
+    {{/if}}
+    </ul>
+   </template>
