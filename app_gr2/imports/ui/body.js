@@ -6,6 +6,7 @@ import './body.html';
 import './templates/formulaire_profil.html';
 import './templates/logIn.html';
 import './templates/barre_navigation.html';
+import './zoesCode.js';
 
 
 Template.logIn.helpers({
