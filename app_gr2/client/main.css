@@ -1,9 +1,9 @@
 body {
-    background-color: #C0C0C0;
+    background-color: #E6E6FA;
     font-family: "Times New Roman", serif;
     font-style: normal;
     font-size: 14pt;
-    border: solid 6px #006400;
+    border: double 10px #006400;
     -moz-border-radius: 50px;
     -webkit-border-radius: 50px;
     border-radius: 50px;
@@ -20,6 +20,12 @@ h1 {
     color: #006400;
     text-align: center;
     font-size: 50px;
+}
+
+h2 {
+    font-style: italic;
+    font-size: 30px;
+    color: #008000;
 }
 
 input {
