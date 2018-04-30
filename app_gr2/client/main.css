@@ -3,7 +3,7 @@ body {
     font-family: "Times New Roman", serif;
     font-style: normal;
     font-size: 14pt;
-    border: double 10px #006400;
+    border: ridge 10px #006400;
     -moz-border-radius: 50px;
     -webkit-border-radius: 50px;
     border-radius: 50px;
@@ -30,7 +30,17 @@ h2 {
 
 input {
     color: #000000;
-    background-color: #FFFFFF;
+    background-color: #98FB98;
     text-align: center;
     font-size: 16px;
+}
+
+blockquote {
+    background-color: #32CD32;
+    border: dashed 5px #006400;
+    margin: 1cm 2cm;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
